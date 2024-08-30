@@ -1,0 +1,3 @@
+[submodule "PowerDynamics.jl"]
+	path = PowerDynamics.jl
+	url = https://github.com/barajale/MarinePowerDynamics.jl
