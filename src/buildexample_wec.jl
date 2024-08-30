@@ -1,3 +1,5 @@
+using Pkg
+Pkg.activate(".")
 using PowerDynamics: SlackAlgebraic, FourthOrderEq, PQAlgebraic, PiModelLine, StaticLine, Transformer, LinearPTO, PowerGrid, write_powergrid, Json
 using OrderedCollections: OrderedDict
 
@@ -21,7 +23,7 @@ buses=OrderedDict(
     "bus12"=> PQAlgebraic(P=-0.061, Q=-0.016),
     "bus13"=> PQAlgebraic(P=-0.135, Q=-0.058),
     "bus14"=> PQAlgebraic(P=-0.149, Q=-0.05),
-    "bus15" => LinearPTO(τ_P=0.1,τ_Q=2.0,K_P=0.1,K_Q=0.1,V_r=1.0,Q=0,K_pto=0, C_pto=1200000, η=0.8, base_power=100e6)
+    "bus15" => LinearPTO(τ_P=0.1,τ_Q=2.0,K_P=0.1,K_Q=0.1,V_r=1.0,Q=0,K_pto=0, C_pto=1200000, η=0.8, base_power=100e6, scaling_factor=2.0)
     );
 
 
